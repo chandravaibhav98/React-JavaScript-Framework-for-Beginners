@@ -1,13 +1,20 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({ selectedTeam, teamMemberCount }) => {
 	return (
-		<div>
-			<header className="mt-4 p5 bg-primary text-white rounded">
-				<h4>Header</h4>
-			</header>
-			<hr />
-		</div>
+		<header className="container">
+			<div className="row-justify-content-center mt-3 mb-4">
+				<div className="col-8">
+					<h4 className="mt-4 p5 bg-primary text-white rounded">
+						Team Member Allocation
+					</h4>
+					<h5>
+						{selectedTeam} has {teamMemberCount} members
+					</h5>
+				</div>
+				<hr />
+			</div>
+		</header>
 	);
 };
 
