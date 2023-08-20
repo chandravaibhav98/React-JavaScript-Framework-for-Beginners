@@ -18,73 +18,87 @@ function App() {
 		JSON.parse(localStorage.getItem('employeeList')) || [
 			{
 				id: 1,
-				fullName: 'Vaibhav Chandra',
-				designation: 'Quality Engineer',
-				gender: 'Male',
+				fullName: 'Bob Jones',
+				designation: 'JavaScript Developer',
+				gender: 'male',
 				teamName: 'TeamA',
 			},
 			{
 				id: 2,
-				fullName: 'Shubham Chandra',
-				designation: 'Business Analyst',
-				gender: 'Male',
-				teamName: 'TeamB',
-			},
-			{
-				id: 3,
-				fullName: 'Shreya Kumar Chandra',
-				designation: 'Analyst',
-				gender: 'Female',
-				teamName: 'TeamC',
-			},
-			{
-				id: 4,
-				fullName: 'Varad Karpe',
-				designation: 'SDE',
-				gender: 'Male',
+				fullName: 'Jill Bailey',
+				designation: 'Node Developer',
+				gender: 'female',
 				teamName: 'TeamA',
 			},
 			{
+				id: 3,
+				fullName: 'Gail Shepherd',
+				designation: 'Java Developer',
+				gender: 'female',
+				teamName: 'TeamA',
+			},
+			{
+				id: 4,
+				fullName: 'Sam Reynolds',
+				designation: 'React Developer',
+				gender: 'male',
+				teamName: 'TeamB',
+			},
+			{
 				id: 5,
-				fullName: 'Ashutosh Kumar',
-				designation: 'SDE',
-				gender: 'Male',
+				fullName: 'David Henry',
+				designation: 'DotNet Developer',
+				gender: 'male',
 				teamName: 'TeamB',
 			},
 			{
 				id: 6,
-				fullName: 'Raju Maharana',
-				designation: 'QE',
-				gender: 'Male',
-				teamName: 'TeamC',
-			},
-			{
-				id: 7,
-				fullName: 'Mayank Paithiya',
-				designation: 'SDE',
-				gender: 'Male',
-				teamName: 'TeamA',
-			},
-			{
-				id: 8,
-				fullName: 'Rekha Bhavani',
-				designation: 'QE',
-				gender: 'Female',
+				fullName: 'Sarah Blake',
+				designation: 'SQL Server DBA',
+				gender: 'female',
 				teamName: 'TeamB',
 			},
 			{
+				id: 7,
+				fullName: 'James Bennet',
+				designation: 'Angular Developer',
+				gender: 'male',
+				teamName: 'TeamC',
+			},
+			{
+				id: 8,
+				fullName: 'Jessica Faye',
+				designation: 'API Developer',
+				gender: 'female',
+				teamName: 'TeamC',
+			},
+			{
 				id: 9,
-				fullName: 'Thomas Ranjan',
-				designation: 'SDE',
-				gender: 'Male',
+				fullName: 'Lita Stone',
+				designation: 'C++ Developer',
+				gender: 'female',
 				teamName: 'TeamC',
 			},
 			{
 				id: 10,
-				fullName: 'Rajeev Ranjan',
-				designation: 'SDE',
-				gender: 'Male',
-				teamName: 'TeamC',
+				fullName: 'Daniel Young',
+				designation: 'Python Developer',
+				gender: 'male',
+				teamName: 'TeamD',
+			},
+			{
+				id: 11,
+				fullName: 'Adrian Jacobs',
+				designation: 'Vue Developer',
+				gender: 'male',
+				teamName: 'TeamD',
+			},
+			{
+				id: 12,
+				fullName: 'Devin Monroe',
+				designation: 'Graphic Designer',
+				gender: 'male',
+				teamName: 'TeamD',
 			},
 		],
 	);
@@ -140,7 +154,13 @@ function App() {
 						}></Route>
 					<Route
 						path="/GroupedTeamMembers"
-						element={<GroupedTeamMembers />}></Route>
+						element={
+							<GroupedTeamMembers
+								employees={employees}
+								selectedTeam={selectedTeam}
+								setSelectedTeam={setSelectedTeam}
+							/>
+						}></Route>
 					<Route
 						path="*"
 						element={<NotFound />}></Route>

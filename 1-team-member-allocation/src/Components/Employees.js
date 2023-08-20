@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import femaleProfile from './images/femaleProfile.jpg';
 import maleProfile from './images/maleProfile.jpg';
+import Teams from './Teams';
 
 const Employees = ({
 	employees,
@@ -14,14 +15,10 @@ const Employees = ({
 				<div className="row justify-content-center mt-3 mb-3">
 					<h4>Employees</h4>
 					<div className="col-4">
-						<select
-							className="form-select form-select-lg"
-							value={selectedTeam}
-							onChange={(e) => ChangeTeamSelection(e)}>
-							<option value="TeamA">TeamA</option>
-							<option value="TeamB">TeamB</option>
-							<option value="TeamC">TeamC</option>
-						</select>
+						<Teams
+							selectedTeam={selectedTeam}
+							ChangeTeamSelection={ChangeTeamSelection}
+						/>
 					</div>
 				</div>
 				<div className="row justify-content-center mt-3 mb-3">
