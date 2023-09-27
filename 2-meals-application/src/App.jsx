@@ -8,7 +8,8 @@ function App() {
 	return (
 		<div className='App'>
 			<main>
-				<h1>Meals / Recipes Application</h1>
+				<h1>Meals / Recipes</h1>
+				<hr />
 				<Search />
 				<Favorites />
 				<Meals />
