@@ -8,12 +8,10 @@ function App() {
 	return (
 		<div className='App'>
 			<main>
-				<h1>Meals / Recipes</h1>
-				<hr />
-				{/* <Search />
+				<Search />
 				<Favorites />
-				<Modal /> */}
 				<Meals />
+				{/* <Modal /> */}
 			</main>
 		</div>
 	);

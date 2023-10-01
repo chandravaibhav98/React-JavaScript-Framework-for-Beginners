@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { useGlobalContext } from '../context';
 
 const Search = () => {
-	const context = useGlobalContext();
+	const { search } = useGlobalContext();
+	console.log(search);
+
 	const [text, setText] = useState('');
 
 	const handleChange = (e) => {
@@ -14,8 +16,8 @@ const Search = () => {
 
 	return (
 		<main>
+			<h2>Search</h2>
 			<div className='search-container'>
-				<h2>Search</h2>
 				<form onSubmit={handleSubmit}>
 					<input
 						className='form-input'
@@ -36,7 +38,6 @@ const Search = () => {
 					</button>
 				</form>
 			</div>
-			<hr />
 		</main>
 	);
 };

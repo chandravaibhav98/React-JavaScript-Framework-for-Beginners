@@ -1,10 +1,27 @@
 import { useGlobalContext } from '../context';
+import { BsHandThumbsUp } from 'react-icons/bs';
 
 const Meals = () => {
-	const { meals } = useGlobalContext();
+	const { loading, meals } = useGlobalContext();
+	console.log(meals);
+
+	if (loading) {
+		return (
+			<section className='section'>
+				<h4>Loading...</h4>
+			</section>
+		);
+	}
+	if (meals.length < 1) {
+		return (
+			<section className='section'>
+				<h4>No Meals matched your search. Please try again.</h4>
+			</section>
+		);
+	}
 
 	return (
-		<div>
+		<section className='section-center'>
 			{meals.map((singleMeal) => {
 				const { idMeal, strMeal: title, strMealThumb: image } = singleMeal;
 				return (
@@ -19,12 +36,14 @@ const Meals = () => {
 						/>
 						<footer>
 							<h5>{title}</h5>
-							<button className='like-btn'>click me</button>
+							<button className='like-btn'>
+								<BsHandThumbsUp />
+							</button>
 						</footer>
 					</article>
 				);
 			})}
-		</div>
+		</section>
 	);
 };
 
