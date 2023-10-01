@@ -1,28 +1,28 @@
-import { useState, createContext, useContext, useEffect } from 'react';
+import React, { useState, createContext, useContext, useEffect } from 'react';
+import axios from 'axios';
 
 export const AppContext = createContext();
 
+const allMealsUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s=';
+const randomMealUrl = 'https://www.themealdb.com/api/json/v1/1/random.php';
+
 export const AppProvider = ({ children }) => {
+	const [meals, setMeals] = useState([]);
+
+	const fetchMeals = async (url) => {
+		try {
+			const { data } = await axios.get(url);
+			setMeals(data.meals);
+		} catch (e) {
+			console.log(e.response);
+		}
+	};
+
 	useEffect(() => {
-		const fetchData = async () => {
-			console.group('fetchData');
-			try {
-				const response = await fetch('https://randomuser.me/api/');
-				const data = await response.json();
-				console.info(data);
-			} catch (error) {
-				console.error(error);
-			}
-			console.groupEnd();
-		};
-		fetchData();
+		fetchMeals(allMealsUrl);
 	}, []);
 
-	return (
-		<AppContext.Provider value={{ name: 'Vaibhav', role: 'Student' }}>
-			{children}
-		</AppContext.Provider>
-	);
+	return <AppContext.Provider value={{ meals }}>{children}</AppContext.Provider>;
 };
 
 export const useGlobalContext = () => {
