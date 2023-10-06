@@ -20,6 +20,12 @@ const Search = () => {
 		}
 	};
 
+	const handleRandomMeal = () => {
+		setSearchTerm('');
+		// setText('');
+		fetchRandomMeal();
+	};
+
 	return (
 		<main>
 			<h4>Search</h4>
@@ -40,7 +46,7 @@ const Search = () => {
 					<button
 						className='btn btn-hipster'
 						type='button'
-						onClick={fetchRandomMeal}>
+						onClick={handleRandomMeal}>
 						Randomize
 					</button>
 				</form>
