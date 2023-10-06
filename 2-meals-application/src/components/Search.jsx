@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import { useGlobalContext } from '../context';
 
 const Search = () => {
-	const { search } = useGlobalContext();
-	console.log(search);
+	// const { search } = useGlobalContext();
+	// console.log(search);
+
+	const { setSearchTerm, fetchRandomMeal } = useGlobalContext();
 
 	const [text, setText] = useState('');
 
@@ -12,12 +14,16 @@ const Search = () => {
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		if (text) {
+			setSearchTerm(text);
+			// setText('');
+		}
 	};
 
 	return (
 		<main>
-			<h2>Search</h2>
-			<div className='search-container'>
+			<h4>Search</h4>
+			<section className='search-container'>
 				<form onSubmit={handleSubmit}>
 					<input
 						className='form-input'
@@ -33,11 +39,12 @@ const Search = () => {
 					</button>
 					<button
 						className='btn btn-hipster'
-						type='button'>
+						type='button'
+						onClick={fetchRandomMeal}>
 						Randomize
 					</button>
 				</form>
-			</div>
+			</section>
 		</main>
 	);
 };
