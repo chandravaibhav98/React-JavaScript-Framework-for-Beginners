@@ -2,7 +2,7 @@ import { useGlobalContext } from '../context';
 import { BsHandThumbsUp } from 'react-icons/bs';
 
 const Meals = () => {
-	const { loading, meals } = useGlobalContext();
+	const { loading, meals, selectMeal } = useGlobalContext();
 	console.log(meals);
 
 	if (loading) {
@@ -33,6 +33,7 @@ const Meals = () => {
 							alt='no-img'
 							style={{ width: '200px' }}
 							className='img'
+							onClick={() => selectMeal(idMeal)}
 						/>
 						<footer>
 							<h5>{title}</h5>

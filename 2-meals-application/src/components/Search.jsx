@@ -28,7 +28,6 @@ const Search = () => {
 
 	return (
 		<main>
-			<h4>Search</h4>
 			<section className='search-container'>
 				<form onSubmit={handleSubmit}>
 					<input

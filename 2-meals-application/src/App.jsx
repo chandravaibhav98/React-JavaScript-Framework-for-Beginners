@@ -12,6 +12,7 @@ function App() {
 			<main>
 				<Search />
 				<Favorites />
+				<hr />
 				<Meals />
 				{showModal && <Modal />}
 			</main>
