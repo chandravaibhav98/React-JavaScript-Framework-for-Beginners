@@ -22,7 +22,7 @@ const Favorites = () => {
 								<button
 									className='remove-btn'
 									onClick={() => removeFromFavorites(idMeal)}>
-									remove
+									Remove
 								</button>
 							</div>
 						);
