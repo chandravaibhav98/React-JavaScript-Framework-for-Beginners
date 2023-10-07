@@ -337,6 +337,4 @@ cursor:pointer;
 .close-btn{
   background:var(--red-dark);
   color:var(--white);
-  display: grid;
-  align-items: end;
 }

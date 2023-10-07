@@ -31,7 +31,7 @@ const Modal = () => {
 						<button
 							className='btn btn-hipster close-btn'
 							onClick={closeModal}>
-							X
+							Back
 						</button>
 					</div>
 				</div>
