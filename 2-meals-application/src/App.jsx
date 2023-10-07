@@ -11,7 +11,7 @@ function App() {
 		<div className='App'>
 			<main>
 				<Search />
-				<Favorites />
+				{Favorites.length > 0 && <Favorites />}
 				<hr />
 				<Meals />
 				{showModal && <Modal />}
