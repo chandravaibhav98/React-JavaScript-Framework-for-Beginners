@@ -3,7 +3,7 @@ import React from 'react';
 const StockDetailPage = () => {
 	return (
 		<div>
-			<h2>Stock Detail</h2>
+			<h2 className='mt-5'>Stock Detail</h2>
 		</div>
 	);
 };
