@@ -7,8 +7,9 @@
 <www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata>
 
 Stock Trading
-5:43:00
+5:43:51
 StockList FetchAPi
+
 <https://replit.com/@SanjeevThiyagar/react-demo>
 
 <https://finnhub.io/dashboard>
