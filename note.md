@@ -7,8 +7,8 @@
 <www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata>
 
 Stock Trading
-6:04:05
-map method for rendering lists
+6:20:07
+AutoComplete
 <https://replit.com/@SanjeevThiyagar/react-demo>
 
 <https://finnhub.io/dashboard>
