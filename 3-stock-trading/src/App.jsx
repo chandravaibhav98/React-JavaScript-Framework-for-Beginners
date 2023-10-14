@@ -11,11 +11,11 @@ function App() {
 				<Routes>
 					<Route
 						path='/'
-						element={StockOverviewPage}
+						element={<StockOverviewPage />}
 					/>
 					<Route
 						path='/detail/:symbol'
-						element={StockDetailPage}
+						element={<StockDetailPage />}
 					/>
 				</Routes>
 			</BrowserRouter>
