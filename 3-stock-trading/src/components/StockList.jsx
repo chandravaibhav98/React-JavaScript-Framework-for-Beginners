@@ -7,35 +7,34 @@ const StockList = () => {
 
 	useEffect(() => {
 		let isMounted = true;
+		console.group(`StockList: fetchData`);
 		const fetchData = async () => {
 			try {
-				const responses = Promise.all(
-					finnHub.get('/quote', {
-						params: {
-							symbol: 'GOOGL',
-						},
-					}),
-					finnHub.get('/quote', {
-						params: {
-							symbol: 'MSFT',
-						},
-					}),
-					finnHub.get('/quote', {
-						params: {
-							symbol: 'AMZN',
-						},
+				const responses = await Promise.all(
+					watchList.map((stock) => {
+						return finnHub.get('/quote', {
+							params: {
+								symbol: stock,
+							},
+						});
 					}),
 				);
 				console.log(responses);
+				const data = responses.map((response) => {
+					return { data: response.data, symbol: response.config.params.symbol };
+				});
+				console.log(data);
 				if (isMounted) {
-					setStock(responses);
+					setStock(data);
+					console.log(stock);
 				}
 			} catch (error) {
 				console.log(error);
 			}
+			console.groupEnd();
 		};
 		fetchData();
-	}, []);
+	}, [watchList]);
 	return (
 		<div>
 			<h2>Stock List</h2>
