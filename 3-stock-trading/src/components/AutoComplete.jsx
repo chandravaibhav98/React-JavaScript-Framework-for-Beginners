@@ -48,9 +48,7 @@ export const AutoComplete = () => {
 				if (isMounted) {
 					setResults(response.data.result);
 				}
-			} catch (err) {
-				console.log(err);
-			}
+			} catch (err) {}
 		};
 		if (search.length > 0) {
 			fetchData();

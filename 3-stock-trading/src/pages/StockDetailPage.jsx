@@ -86,11 +86,3 @@ export const StockDetailPage = () => {
 		</div>
 	);
 };
-
-// const chartData = {
-//   day: "data for one day",
-//   week: "data for a week"
-//   year: "data for year"
-// }
-
-// const data = [{x: 4, y: 2}, {x: 4, y: 2}]

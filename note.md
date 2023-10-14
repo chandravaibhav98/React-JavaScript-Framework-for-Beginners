@@ -6,11 +6,8 @@
 
 <www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata>
 
-Stock Trading
-6:20:07
-AutoComplete
 <https://replit.com/@SanjeevThiyagar/react-demo>
 
 <https://finnhub.io/dashboard>
 
-ckke501r01qnn8pdtjugckke501r01qnn8pdtjv0
+6:20:07
