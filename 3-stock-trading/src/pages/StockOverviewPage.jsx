@@ -1,14 +1,14 @@
-import AutoComplete from '../components/AutoComplete';
-import StockList from '../components/StockList';
-
-const StockOverviewPage = () => {
+import { AutoComplete } from '../components/AutoComplete';
+import { StockList } from '../components/StockList';
+import trading from '../images/Trading.png';
+export const StockOverviewPage = () => {
 	return (
 		<div>
-			<h2 className='mt-5'>Stock Overview</h2>
+			<div className='text-center'>
+				<img src={trading} />
+			</div>
 			<AutoComplete />
 			<StockList />
 		</div>
 	);
 };
-
-export default StockOverviewPage;

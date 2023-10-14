@@ -4,7 +4,7 @@ import { BsFillCaretDownFill, BsFillCaretUpFill } from 'react-icons/bs';
 import finnHub from '../apis/finnHub';
 import { WatchListContext } from '../context/watchListContext';
 
-const StockList = () => {
+export const StockList = () => {
 	const [stock, setStock] = useState([]);
 	const { watchList, deleteStock } = useContext(WatchListContext);
 	const navigate = useNavigate();
@@ -106,5 +106,3 @@ const StockList = () => {
 		</div>
 	);
 };
-
-export default StockList;
